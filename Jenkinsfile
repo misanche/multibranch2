@@ -2,12 +2,14 @@ pipeline {
 
     agent any
     
-    pipelineTriggers([ 
-        upstream( 
-           threshold: hudson.model.Result.SUCCESS, 
-           upstreamProjects: "/multibranch /" + env.BRANCH_NAME.replaceAll("/", "%2F") 
-        )
-    ])
+    properties {
+        pipelineTriggers([ 
+            upstream( 
+               threshold: hudson.model.Result.SUCCESS, 
+               upstreamProjects: "/multibranch1/" + env.BRANCH_NAME.replaceAll("/", "%2F") 
+            )
+        ])
+    }
 
     stages {
         stage(' Test') {
