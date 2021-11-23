@@ -2,7 +2,7 @@ pipeline {
 
     agent any
     
-    properties {
+    options {
         pipelineTriggers([ 
             upstream( 
                threshold: hudson.model.Result.SUCCESS, 
