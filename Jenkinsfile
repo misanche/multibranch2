@@ -12,9 +12,7 @@ pipeline {
     stages {
         stage(' Test') {
             steps {
-                sh """
-                echo "Running Unit Tests multibranch 2" + env.MIKEL
-                """
+                echo "Param from multibranch1 ${env.MIKEL}"
             }
         }
     }   
