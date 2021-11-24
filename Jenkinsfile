@@ -13,7 +13,7 @@ pipeline {
         stage(' Test') {
             steps {
                 sh """
-                echo "Running Unit Tests multibranch 2"
+                echo "Running Unit Tests multibranch 2" + env.MIKEL
                 """
             }
         }
